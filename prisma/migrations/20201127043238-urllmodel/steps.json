@@ -1,0 +1,131 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateSource",
+      "source": "db"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Source",
+        "source": "db"
+      },
+      "argument": "provider",
+      "value": "\"postgresql\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Source",
+        "source": "db"
+      },
+      "argument": "url",
+      "value": "\"***\""
+    },
+    {
+      "tag": "CreateModel",
+      "model": "Urls"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Urls",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Urls",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Urls",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Urls",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Urls",
+      "field": "createdAt",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Urls",
+          "field": "createdAt"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Urls",
+          "field": "createdAt"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Urls",
+      "field": "nick",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Urls",
+          "field": "nick"
+        },
+        "directive": "unique"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Urls",
+      "field": "url",
+      "type": "String",
+      "arity": "Required"
+    }
+  ]
+}
